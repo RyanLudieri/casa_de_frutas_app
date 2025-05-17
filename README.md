@@ -1,3 +1,19 @@
+# 🍇 Casa de Frutas - Front-End
+
+Interface web para o controle de produtos da **Casa de Frutas**, conectando-se com a API de gerenciamento. Desenvolvido com foco em aprendizado, uso real no comércio do meu avô, e com potencial para futuras melhorias.
+
+---
+
+## ✨ Funcionalidades do Front-End
+
+- 🎨 Interface amigável e responsiva com React
+- 🔌 Comunicação com API REST para operações em tempo real
+- 🧾 Exibição de lista de produtos
+- ✅ Cadastro de novos produtos
+- 🔍 Busca e filtragem de produtos
+- ✏️ Edição de informações via formulário
+- 🗑️ Remoção de produtos com confirmação
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
