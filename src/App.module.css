@@ -1,0 +1,45 @@
+/* App.module.css */
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  color: #27ae60;
+}
+
+.sectionTitle {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 4px;
+}
+
+.filters {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.filterInput {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 160px;
+  transition: border-color 0.3s ease;
+}
+
+.filterInput:focus {
+  outline: none;
+  border-color: #27ae60;
+}

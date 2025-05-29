@@ -3,17 +3,18 @@ import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
 import { getAllProducts, createProduct, updateProduct, deleteProduct, searchProducts } from './services/api';
 
+// Import CSS módulo se quiser estilizar filtros e container
+import styles from './App.module.css';  // Vou sugerir o CSS abaixo para este módulo
+
 const App = () => {
   const [products, setProducts] = useState([]);
   const [editingProduct, setEditingProduct] = useState(null);
 
-  // Estados para filtros
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   const [minPriceFilter, setMinPriceFilter] = useState('');
   const [maxPriceFilter, setMaxPriceFilter] = useState('');
 
-  // Função de busca memoizada com useCallback
   const fetchProducts = useCallback(async () => {
     if (searchTerm || typeFilter || minPriceFilter || maxPriceFilter) {
       const res = await searchProducts({ 
@@ -29,7 +30,6 @@ const App = () => {
     }
   }, [searchTerm, typeFilter, minPriceFilter, maxPriceFilter]);
 
-  // useEffect que chama fetchProducts sempre que fetchProducts (ou filtros) mudam
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
@@ -53,34 +53,29 @@ const App = () => {
     fetchProducts();
   };
 
-  // Atualiza filtros e já dispara nova busca via useEffect (que depende dos filtros)
-  const handleSearchTermChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-  const handleTypeFilterChange = (e) => {
-    setTypeFilter(e.target.value);
-  };
-  const handleMinPriceChange = (e) => {
-    setMinPriceFilter(e.target.value);
-  };
-  const handleMaxPriceChange = (e) => {
-    setMaxPriceFilter(e.target.value);
-  };
-
   return (
-    <div>
-      <h1>🍍 Casa de Frutas do Tiaozinho</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>🍍 Casa de Frutas do Tiaozinho</h1>
 
-      {/* Filtros */}
-      <div style={{ marginBottom: '1rem' }}>
+      <h2 className={styles.sectionTitle}>Adicionar produtos</h2>
+      <ProductForm onSubmit={handleSubmit} editingProduct={editingProduct} />
+
+      <h2 className={styles.sectionTitle}>Produtos Cadastrados</h2>
+
+      <div className={styles.filters}>
+        <h3>Filtros</h3>
         <input
           type="text"
           placeholder="Buscar produto por nome..."
           value={searchTerm}
-          onChange={handleSearchTermChange}
-          style={{ marginRight: '0.5rem', padding: '0.5rem', width: '200px' }}
+          onChange={e => setSearchTerm(e.target.value)}
+          className={styles.filterInput}
         />
-        <select value={typeFilter} onChange={handleTypeFilterChange} style={{ marginRight: '0.5rem', padding: '0.5rem' }}>
+        <select
+          value={typeFilter}
+          onChange={e => setTypeFilter(e.target.value)}
+          className={styles.filterInput}
+        >
           <option value="">Todos os tipos</option>
           <option value="FRUTA">FRUTA</option>
           <option value="VERDURA">VERDURA</option>
@@ -90,19 +85,18 @@ const App = () => {
           type="number"
           placeholder="Preço mínimo"
           value={minPriceFilter}
-          onChange={handleMinPriceChange}
-          style={{ marginRight: '0.5rem', padding: '0.5rem', width: '120px' }}
+          onChange={e => setMinPriceFilter(e.target.value)}
+          className={styles.filterInput}
         />
         <input
           type="number"
           placeholder="Preço máximo"
           value={maxPriceFilter}
-          onChange={handleMaxPriceChange}
-          style={{ marginRight: '0.5rem', padding: '0.5rem', width: '120px' }}
+          onChange={e => setMaxPriceFilter(e.target.value)}
+          className={styles.filterInput}
         />
       </div>
 
-      <ProductForm onSubmit={handleSubmit} editingProduct={editingProduct} />
       <ProductList products={products} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   );
