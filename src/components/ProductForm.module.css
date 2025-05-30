@@ -1,39 +1,32 @@
-/* ProductForm.module.css */
-
 .form {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
   align-items: center;
 }
 
-.inputText, select {
-  padding: 10px 14px;
+.inputText {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.6rem 0.8rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  min-width: 180px;
-  transition: border-color 0.3s ease;
-}
-
-.inputText:focus, select:focus {
-  border-color: #27ae60;
-  outline: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 .btnPrimary {
-  background-color: #27ae60;
+  padding: 0.6rem 1.2rem;
+  background-color: #3cba54;
   color: white;
   border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  min-width: 110px;
+  transition: background-color 0.2s;
 }
 
 .btnPrimary:hover {
-  background-color: #219150;
+  background-color: #32a244;
 }
