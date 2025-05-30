@@ -55,9 +55,9 @@ const ProductForm = ({ onSubmit, editingProduct }) => {
         onChange={handleChange}
         className={styles.inputText}
       >
-        <option value="FRUTA">FRUTA</option>
-        <option value="VERDURA">VERDURA</option>
-        <option value="LEGUME">LEGUME</option>
+        <option value="FRUTA">Fruta</option>
+        <option value="VERDURA">Verdura</option>
+        <option value="LEGUME">Legume</option>
       </select>
       <button type="submit" className={styles.btnPrimary}>
         {product.id ? 'Atualizar' : 'Adicionar'}

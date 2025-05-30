@@ -64,13 +64,6 @@ const App = () => {
 
       <div className={styles.filters}>
         <h3>Filtros</h3>
-        <input
-          type="text"
-          placeholder="Buscar produto por nome..."
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-          className={styles.filterInput}
-        />
         <select
           value={typeFilter}
           onChange={e => setTypeFilter(e.target.value)}
@@ -96,6 +89,15 @@ const App = () => {
           className={styles.filterInput}
         />
       </div>
+
+      <h2>Busca de Produtos</h2>
+      <input
+          type="text"
+          placeholder="Buscar produto por nome..."
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+          className={styles.nameSearch}
+        />
 
       <ProductList products={products} onEdit={handleEdit} onDelete={handleDelete} />
     </div>

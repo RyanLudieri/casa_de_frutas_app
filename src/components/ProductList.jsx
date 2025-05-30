@@ -6,12 +6,13 @@ const ProductList = ({ products, onEdit, onDelete }) => (
       {products.map(product => (
         <li key={product.id} className={styles.listItem}>
           <div className={styles.productInfo}>
-            <strong>{product.name}</strong>
-            <span className={styles.productDetails}>
-              {' Preço: '}R$ {product.price?.toFixed(2)} {product.type}
-            </span>
+            <strong className={styles.productName}>{product.name}</strong>
+            <strong className={styles.productPrice}>
+              R$ {product.price?.toFixed(2)} 
+            </strong>
+            <span className={styles.productType}>{product.type}</span>
           </div>
-          <div>
+          <div className={styles.actions}>
             <button className={styles.btnEdit} onClick={() => onEdit(product)}>Editar</button>
             <button className={styles.btnDelete} onClick={() => onDelete(product.id)}>Deletar</button>
           </div>

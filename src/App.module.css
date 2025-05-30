@@ -43,3 +43,14 @@
   outline: none;
   border-color: #27ae60;
 }
+
+.nameSearch{
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 160px;
+  transition: border-color 0.3s ease;
+  width: 100%; /* ocupa toda a largura da viewport */
+  box-sizing: border-box; /* inclui o padding na largura */
+}
