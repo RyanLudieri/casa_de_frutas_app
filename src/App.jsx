@@ -6,6 +6,10 @@ import { getAllProducts, createProduct, updateProduct, deleteProduct, searchProd
 import styles from './App.module.css';
 import { FiFilter } from 'react-icons/fi';
 
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './pages/Home';
+import NavBar from './components/NavBar';
+
 const App = () => {
   const [products, setProducts] = useState([]);
   const [editingProduct, setEditingProduct] = useState(null);
@@ -53,8 +57,15 @@ const App = () => {
   };
 
   return (
+
     <div className={styles.container}>
-      <h1 className={styles.title}>🍍 Casa de Frutas do Tiaozinho</h1>
+
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+        </Routes>
+      </BrowserRouter>
 
       <h2 className={styles.sectionTitle}>Cadastrar Produtos</h2>
       <ProductForm onSubmit={handleSubmit} editingProduct={editingProduct} />

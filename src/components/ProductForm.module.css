@@ -18,7 +18,7 @@
 
 .btnPrimary {
   padding: 0.6rem 1.2rem;
-  background-color: #3cba54;
+  background-color: #2e7d32;
   color: white;
   border: none;
   border-radius: 8px;
@@ -28,5 +28,5 @@
 }
 
 .btnPrimary:hover {
-  background-color: #32a244;
+  background-color: #15400e;
 }
