@@ -45,7 +45,6 @@ const ProductForm = ({ onSubmit, editingProduct }) => {
         onChange={handleChange}
         placeholder="Preço"
         type="number"
-        step="0.01"
         required
         className={styles.inputText}
       />

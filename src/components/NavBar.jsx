@@ -14,6 +14,7 @@ const NavBar = () => {
 
       <nav className={styles.nav}>
         <Link to="/" className={styles.link}>Home</Link>
+        <Link to="/register" className={styles.link}>Register</Link>
       </nav>
     </header>
   );
